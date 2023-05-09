@@ -3,15 +3,15 @@
 class TaskDB 
 {
 	public $pdo;
+	public $tasks;
 
 	function __construct ($driver, $host, $port, $db_name, $db_user, $db_pass)
 	{
 		try {
+			// Initialization de la PDO
 			$this->pdo = new PDO("$driver:host=$host;port=$port;dbname=$db_name", $db_user, $db_pass);
 		} catch (Exception $e) {
-			var_dump($e);
-			echo "\n\n";
-			echo $e->getMessage();
+			die($e->getMessage());
 		}
 	}
 
@@ -21,11 +21,24 @@ class TaskDB
 			$query = "SELECT * FROM task";
 			$dst = $this->pdo->prepare($query);
 			$dst->execute();
-			$result = $dst->fetchAll();
-			var_dump($result);
+			$this->tasks = $dst->fetchAll(PDO::FETCH_ASSOC);
+
 		} catch (Exception $e) {
-			
+			die($e->getMessage());
 		}
+	}
+
+	function dispTasks ()
+	{
+		foreach ($this->tasks as $task) :
+			?> 
+			<div class="task">
+				<div class="task_name"> <?= $task['name'] ?> </div>
+				<div class="task_description"> <?= $task['description']; ?> </div>
+				<div class="task_last"> <?= $task['last_done_date']; ?> </div>
+			</div>
+			<?php
+		endforeach;
 	}
 }
 

@@ -19,9 +19,13 @@ include_once "model.php";
 			<?php 
 			$task_test = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");
 			$task_test->getTasks();
+
 			// phpinfo();
 			?>
 		</pre>
+		<div class="tasks_container">
+			<?php $task_test->dispTasks(); ?>
+		</div>
 	</main>
 </body>
 </html>

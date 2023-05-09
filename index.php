@@ -18,6 +18,7 @@ include_once "model.php";
 		<pre>
 			<?php 
 			$task_test = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");
+			$task_test->getTasks();
 			// phpinfo();
 			?>
 		</pre>

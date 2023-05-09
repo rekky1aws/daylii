@@ -7,7 +7,7 @@ class TaskDB
 	function __construct ($driver, $host, $port, $db_name, $db_user, $db_pass)
 	{
 		try {
-			$pdo = new PDO("$driver:host=$host;port=$port;dbname=$db_name", $db_user, $db_pass);
+			$this->pdo = new PDO("$driver:host=$host;port=$port;dbname=$db_name", $db_user, $db_pass);
 		} catch (Exception $e) {
 			var_dump($e);
 			echo "\n\n";
@@ -19,8 +19,10 @@ class TaskDB
 	{
 		try {
 			$query = "SELECT * FROM task";
-			$result = $this->pdo->prepare($query);
-			//var_dump($result);
+			$dst = $this->pdo->prepare($query);
+			$dst->execute();
+			$result = $dst->fetchAll();
+			var_dump($result);
 		} catch (Exception $e) {
 			
 		}

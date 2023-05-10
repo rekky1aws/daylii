@@ -1,5 +1,8 @@
 <?php 
-include_once "model.php";
+// Autoloader to include code
+include_once "controller/autoload.php";
+
+$header = new Header();
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +14,7 @@ include_once "model.php";
 	<title> Daylii </title>
 </head>
 <body>
-	<header>
-		<h1> Daylii </h1>
-	</header>
+	<?= $header->getContent(); ?>
 	<main>
 		<pre>
 			<?php 
@@ -26,6 +27,9 @@ include_once "model.php";
 		<div class="tasks_container">
 			<?php $task_test->dispTasks(); ?>
 		</div>
+		<a href="view/add.php" class="add_button grow">
+			+
+		</a>
 	</main>
 </body>
 </html>

@@ -8,12 +8,31 @@ h1 {
 
 main {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 15px;
 }
 
 pre {
 	display: none;
+}
+
+.add_button {
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	border-radius: 25px;
+	background-color: seagreen;
+	padding: 15px;
+	width: 500px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.grow:hover {
+	transform: scale(1.1);
+	box-shadow: 0px 10px 15px -15px #888888;
 }
 
 .tasks_container {
@@ -34,11 +53,6 @@ pre {
 	width: 500px;
 	gap: 10px;
 	transition: ease-in-out 0.2s;
-}
-
-.task:hover {
-	transform: scale(1.1);
-	box-shadow: 0px 10px 15px -15px #888888;
 }
 
 .task_name {

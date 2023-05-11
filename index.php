@@ -3,6 +3,8 @@
 include_once "controller/autoload.php";
 
 $header = new Header();
+$head = new Head();
+
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,7 @@ $header = new Header();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/style/main.css">
+	<?= $head->getContent(); ?>
 	<title> Daylii </title>
 </head>
 <body>

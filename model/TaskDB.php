@@ -35,7 +35,7 @@ class TaskDB
 			<div class="task grow">
 				<div class="task_name"> <?= $task['name'] ?> </div>
 				<div class="task_description"> <?= $task['description']; ?> </div>
-				<div class="task_last"> <?= $task['last_done_date']; ?> </div>
+				<div class="task_last"> Done on : <?= $task['last_done_date']; ?> </div>
 			</div>
 			<?php
 		endforeach;

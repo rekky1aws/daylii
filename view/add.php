@@ -6,7 +6,7 @@
 	<title> Ajouter une tâche </title>
 </head>
 <body>
-	<form>
+	<form method="POST">
 		
 	</form>
 </body>

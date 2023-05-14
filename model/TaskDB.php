@@ -15,7 +15,7 @@ class TaskDB
 		}
 	}
 
-	function getTasks ()
+	function getAllTasks ()
 	{
 		try {
 			$query = "SELECT * FROM task";
@@ -39,6 +39,16 @@ class TaskDB
 			</div>
 			<?php
 		endforeach;
+	}
+
+	function askTasks ($name, $description)
+	{
+
+	}
+
+	function updateTask ()
+	{
+		
 	}
 }
 

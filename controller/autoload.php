@@ -1,11 +1,10 @@
 <?php
 
 // Components
-include_once "components/header.php";
-include_once "components/head.php";
+include_once PATH_PREFIX."components/header.php";
+include_once PATH_PREFIX."components/head.php";
 
 // Model
-include_once "model/TaskDB.php";
-
+include_once PATH_PREFIX."model/TaskDB.php";
 
 ?>

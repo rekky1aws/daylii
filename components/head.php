@@ -3,7 +3,7 @@
 class Head
 {
 	private $content = "
-	<link rel=\"stylesheet\" type=\"text/css\" href=\"style/main.css\">
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/main.css\">
 	";
 
 	public function getContent ()

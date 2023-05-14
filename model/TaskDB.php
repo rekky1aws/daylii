@@ -41,14 +41,28 @@ class TaskDB
 		endforeach;
 	}
 
-	function askTasks ($name, $description)
+	function addTask ($name, $description)
 	{
+		try {
+			$query = "INSERT INTO task (name, description) VALUES (\"$name\", \"$description\");";
+			$dst = $this->pdo->prepare($query);
+			echo $query;
+			$result = $dst->execute();
+			var_dump($result);
 
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
+	function taskExist ()
+	{
+		
 	}
 
 	function updateTask ()
 	{
-		
+
 	}
 }
 

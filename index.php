@@ -1,4 +1,7 @@
-<?php 
+<?php
+// Path prefix for autoload
+define("PATH_PREFIX", "");
+
 // Autoloader to include code
 include_once "controller/autoload.php";
 
@@ -21,7 +24,7 @@ $head = new Head();
 		<pre>
 			<?php 
 			$task_test = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");
-			$task_test->getTasks();
+			$task_test->getAllTasks();
 
 			// phpinfo();
 			?>

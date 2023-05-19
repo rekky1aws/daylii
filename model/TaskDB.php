@@ -48,9 +48,9 @@ class TaskDB
 		try {
 			$query = "INSERT INTO task (name, description) VALUES (\"$name\", \"$description\");";
 			$dst = $this->pdo->prepare($query);
-			echo $query;
+			echo $query; // DEBUG
 			$result = $dst->execute();
-			var_dump($result);
+			var_dump($result); // DEBUG
 
 		} catch (Exception $e) {
 			die($e->getMessage());
@@ -62,16 +62,16 @@ class TaskDB
 		try {
 			$query = "SELECT * FROM task WHERE 1;";
 			$dst = $this->pdo->prepare($query);
-			echo $query;
+			echo $query; // DEBUG
 			$result = $dst->execute();
 			$values = $dst->fetchAll(PDO::FETCH_ASSOC);
-			var_dump($result);
-			var_dump($values);
+			var_dump($result); // DEBUG
+			var_dump($values); // DEBUG
 
 			$similar = [];
 			foreach ($values as $value) {
 				$score = strcasecmp($name, $value['name']);
-				echo "Task ".$value['id']." score : $score\n";
+				echo "Task ".$value['id']." score : $score\n"; // DEBUG
 				if (abs($score) <= SIMIL_RATIO) {
 					array_push($similar, $value);
 				}

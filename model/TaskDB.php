@@ -1,5 +1,7 @@
 <?php 
 
+define('SIMIL_RATIO', 0.5);
+
 class TaskDB 
 {
 	public $pdo;
@@ -55,9 +57,26 @@ class TaskDB
 		}
 	}
 
-	function taskExist ()
+	function taskExists ($name, $description)
 	{
-		
+		try {
+			$query = "SELECT * FROM task WHERE 1;";
+			$dst = $this->pdo->prepare($query);
+			echo $query;
+			$result = $dst->execute();
+			$values = $dst->fetchAll(PDO::FETCH_ASSOC);
+			var_dump($result);
+			var_dump($values);
+
+			$similar = [];
+			foreach ($values as $value) {
+				$score = strcasecmp($name, $value['name']);
+				echo "Task ".$value['id']." score : $score\n";
+			}
+
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
 	}
 
 	function updateTask ()

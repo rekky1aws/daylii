@@ -12,7 +12,8 @@ echo "<pre>";
 var_dump($_POST);
 echo "</pre>";
 
-$taskDB = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");;
+$taskDB = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");
+$taskDB->taskExists($_POST['task_name'], $_POST['task_desc']);
 $taskDB->addTask($_POST['task_name'], $_POST['task_desc']);
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-define('SIMIL_RATIO', 0.5);
+define('SIMIL_RATIO', 2);
 
 class TaskDB 
 {
@@ -72,6 +72,9 @@ class TaskDB
 			foreach ($values as $value) {
 				$score = strcasecmp($name, $value['name']);
 				echo "Task ".$value['id']." score : $score\n";
+				if (abs($score) <= SIMIL_RATIO) {
+					array_push($similar, $value);
+				}
 			}
 
 		} catch (Exception $e) {

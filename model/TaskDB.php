@@ -77,6 +77,8 @@ class TaskDB
 				}
 			}
 
+			var_dump($similar);
+
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}

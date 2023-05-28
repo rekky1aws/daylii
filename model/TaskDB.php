@@ -60,9 +60,18 @@ class TaskDB
 		
 	}
 
-	function updateTask ()
+	function updateTask ($taskName)
 	{
+		try {
+			$query = "UPDATE task SET last_done_date = CURRENT_TIMESTAMP() WHERE name LIKE \"$taskName\";";
+			$dst = $this->pdo->prepare($query);
+			echo $query;
+			$result = $dst->execute();
+			var_dump($result);
 
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
 	}
 }
 

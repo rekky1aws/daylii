@@ -32,11 +32,11 @@ class TaskDB
 	{
 		foreach ($this->tasks as $task) :
 			?> 
-			<div class="task grow">
+			<a class="task grow" href="controller/updateTask.php?id=<?= $task['id']; ?>">
 				<div class="task_name"> <?= $task['name'] ?> </div>
 				<div class="task_description"> <?= $task['description']; ?> </div>
 				<div class="task_last"> Done on : <?= $task['last_done_date']; ?> </div>
-			</div>
+			</a>
 			<?php
 		endforeach;
 	}
@@ -60,10 +60,10 @@ class TaskDB
 		
 	}
 
-	function updateTask ($taskName)
+	function updateTask ($taskId)
 	{
 		try {
-			$query = "UPDATE task SET last_done_date = CURRENT_TIMESTAMP() WHERE name LIKE \"$taskName\";";
+			$query = "UPDATE task SET last_done_date = CURRENT_TIMESTAMP() WHERE id = $taskId;";
 			$dst = $this->pdo->prepare($query);
 			echo $query;
 			$result = $dst->execute();

@@ -66,6 +66,11 @@ class TaskDB
 		}
 	}
 
+	function editTask ($taskId, $taskName, $taskDesctiption)
+	{
+
+	}
+
 	function taskExist ()
 	{
 		

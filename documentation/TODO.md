@@ -24,6 +24,11 @@
 			+ insert in db if user is ok
 			+ else ditch
 
++ Edit Task
+	+ view with gathered informations from the existing
+		+ can be a reuse of the page to add a task
+	+ model to update with the new content
+
 + Code Structure
 	+ Make sure that the code works even if projects isn't in server root folder
 

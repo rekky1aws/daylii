@@ -41,7 +41,7 @@ class TaskDB
 
 			?> 
 			<a class="task grow" href="controller/updateTask.php?id=<?= $task['id']; ?>">
-				<div>
+				<div class="task_infos">
 					<div class="task_name"> <?= $task['name'] ?> </div>
 					<div class="task_description"> <?= $task['description']; ?> </div>
 					<div class="task_last"> Done on : <?= $task['last_done_date']; ?> </div>

@@ -31,11 +31,22 @@ class TaskDB
 	function dispTasks ()
 	{
 		foreach ($this->tasks as $task) :
+			$doneLastDay = false;
+			$taskDate = substr($task['last_done_date'], 0, 10);
+			$today = date("Y-m-d");
+
+			if($today == $taskDate) {
+				$doneLastDay = true;
+			}
+
 			?> 
 			<a class="task grow" href="controller/updateTask.php?id=<?= $task['id']; ?>">
-				<div class="task_name"> <?= $task['name'] ?> </div>
-				<div class="task_description"> <?= $task['description']; ?> </div>
-				<div class="task_last"> Done on : <?= $task['last_done_date']; ?> </div>
+				<div>
+					<div class="task_name"> <?= $task['name'] ?> </div>
+					<div class="task_description"> <?= $task['description']; ?> </div>
+					<div class="task_last"> Done on : <?= $task['last_done_date']; ?> </div>
+				</div>
+				<div class="task_status <?=$doneLastDay ? "done" : "todo"; ?>"></div>
 			</a>
 			<?php
 		endforeach;

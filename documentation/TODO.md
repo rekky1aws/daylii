@@ -1,5 +1,20 @@
 # To Do
 
++ Docuumentation
+	+ codestyle
+		+ variable declaration
+		+ variable naming
+		+ function declaration
+	+ REDAME
+		+ Summary
+		+ How to use
+		+ Env files documentation
+	+ DB
+		+ Documentation with SQL code to generate database
+		+ Optional code to generate fixtures to test the app
+			+ Create fixtures
+			+ Delete fixtures and clean ID incrementation in DB
+
 + Deleting an existing task
 	+ button to delete a task
 	+ controller to delete task
@@ -11,7 +26,10 @@
 	+ Add a soft delete date
 
 + DB connection
-	+ Learn how to use .env files to access to the DB safer than using MySQL basics test credentials
+	+ Check for .env.local in readEnv.php
+		+ if it exists use it for environnemental variables
+		+ else use .env
+			+ if .env doesn't exist, warn.
 
 + Displaying Task
 	+ Do not show soft deleted tasks

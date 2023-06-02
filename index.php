@@ -23,8 +23,10 @@ $head = new Head();
 	<main>
 		<pre>
 			<?php 
-			$task_test = new TaskDB("mysql", "127.0.0.1", "3306", "daylii", "root", "");
+			$task_test = createFromEnv();
 			$task_test->getAllTasks();
+
+			var_dump($_ENV); // Debug
 
 			// phpinfo();
 			?>

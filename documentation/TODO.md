@@ -29,7 +29,7 @@
 	+ Check for .env.local in readEnv.php
 		+ if it exists use it for environnemental variables
 		+ else use .env
-			+ if .env doesn't exist, warn.
+			+ if .env doesn't exist, ERROR.
 
 + Displaying Task
 	+ Do not show soft deleted tasks

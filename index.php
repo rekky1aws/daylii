@@ -1,6 +1,6 @@
 <?php
 // Path prefix for autoload
-define("PATH_PREFIX", "");
+define("PATH_PREFIX", "./");
 
 // Autoloader to include code
 include_once "controller/autoload.php";

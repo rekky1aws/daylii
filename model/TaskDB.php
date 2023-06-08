@@ -46,7 +46,7 @@ class TaskDB
 					<div class="task_description"> <?= $task['description']; ?> </div>
 					<div class="task_last"> <?= (!empty($task['last_done_date']) && !is_null($task['last_done_date']) ) ? "Done on : ".$task['last_done_date'] : ""; ?> </div>
 				</div>
-				<div class="task_status <?=$doneLastDay ? "todo" : "done"; ?>"></div>
+				<div class="task_status <?=$doneLastDay ? "done" : "todo"; ?>"></div>
 			</a>
 			<?php
 		endforeach;

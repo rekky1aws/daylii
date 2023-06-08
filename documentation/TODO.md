@@ -24,12 +24,19 @@
 
 + DB structure
 	+ Add a soft delete date
+	+ Add a streak count
 
 + DB connection
 	+ Check for .env.local in readEnv.php
 		+ if it exists use it for environnemental variables
 		+ else use .env
 			+ if .env doesn't exist, ERROR.
+
++ Streak count
+	+ Streak in edb = int
+	+ If last done in 24h, increment (+1)
+	+ If last done more than 24h, reset (=1)
+	+ Don't forget to check if null, then sount should be 0 (never done before)
 
 + Displaying Task
 	+ Do not show soft deleted tasks

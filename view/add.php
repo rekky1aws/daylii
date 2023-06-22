@@ -12,25 +12,23 @@ $header = new Header();
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> Ajouter une tâche </title>
 	<?= $head->getContent(); ?>
 	<link rel="stylesheet" type="text/css" href="/style/add.css">
 </head>
 <body>
 	<?= $header->getContent(); ?>
-	<form method="POST" action="../controller/addTask.php">
-		<div>
-			<div>
-				<label for="task_name">Nom</label>
-				<input id="task_name" type="text" name="task_name" maxlength="80">
+	<form method="POST" action="../controller/addTask.php" class="main_form">
+		<div class="form_container">
+			<div class="form_part">
+				<label for="task_name">Nom :</label>
+				<input id="task_name" type="text" name="task_name" maxlength="80" class="form_input">
 			</div>
-			<div>
-				<label for="task_desc">Description</label>
-				<textarea id="task_desc" name="task_desc"></textarea>
+			<div class="form_part">
+				<label for="task_desc">Description :</label>
+				<textarea id="task_desc" name="task_desc" class="form_input desc_input"></textarea>
 			</div>
-			<input type="submit">
+			<input type="submit" class="form_submit">
 		</div>
 	</form>
 	<?php if($_SESSION): ?>

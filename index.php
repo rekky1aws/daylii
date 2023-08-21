@@ -3,7 +3,7 @@
 define("PATH_PREFIX", "./");
 
 // Autoloader to include code
-include_once "controller/autoload.php";
+include_once PATH_PREFIX."controller/autoload.php";
 
 $header = new Header();
 $head = new Head();

@@ -14,7 +14,7 @@ $header = new Header();
 <head>
 	<title> Ajouter une tâche </title>
 	<?= $head->getContent(); ?>
-	<link rel="stylesheet" type="text/css" href="/style/add.css">
+	<link rel="stylesheet" type="text/css" href="../style/add.css">
 </head>
 <body>
 	<?= $header->getContent(); ?>
